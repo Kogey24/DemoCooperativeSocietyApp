@@ -1,4 +1,5 @@
 // ignore: file_names
+import 'package:demo_cooperative_society/Pages/sign_in.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart'; // Add this if using Riverpod
 
@@ -75,6 +76,8 @@ class _SignupPagestate extends ConsumerState<SignUpPage> {
                 decoration: const InputDecoration(
                   labelText: 'Password',
                   hintText: 'Enter your password',
+                  border: InputBorder.none,
+                  contentPadding: EdgeInsets.symmetric(horizontal: 20),
                 ),
               ),
             ),
@@ -85,6 +88,14 @@ class _SignupPagestate extends ConsumerState<SignUpPage> {
                 borderRadius: BorderRadius.circular(30),
               ),
               child: ElevatedButton(
+                style: ButtonStyle(
+                  backgroundColor: MaterialStateProperty.all(Colors.blue),
+                  shape: MaterialStateProperty.all(
+                    RoundedRectangleBorder(
+                      borderRadius: BorderRadius.circular(30),
+                    ),
+                  ),
+                ),
                 onPressed: () {
                   if (_signUpKey.currentState!.validate()) {
                     debugPrint("Email: ${_emailController.text}");
@@ -95,6 +106,17 @@ class _SignupPagestate extends ConsumerState<SignUpPage> {
                   'Sign Up',
                   style: TextStyle(color: Colors.white, fontSize: 18),
                 ),
+              ),
+            ),
+            TextButton(
+              onPressed: () {
+                Navigator.of(
+                  context,
+                ).push(MaterialPageRoute(builder: (context) => const SignIn()));
+              },
+              child: const Text(
+                "Create a new account",
+                style: TextStyle(color: Colors.blue),
               ),
             ),
           ],
