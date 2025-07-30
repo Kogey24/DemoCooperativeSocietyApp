@@ -1,4 +1,5 @@
 // ignore: file_names
+import 'package:demo_cooperative_society/Home.dart';
 import 'package:demo_cooperative_society/Pages/sign_in.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart'; // Add this if using Riverpod
@@ -20,106 +21,125 @@ class _SignupPagestate extends ConsumerState<SignUpPage> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      body: Form(
-        key: _signUpKey,
-        child: Column(
-          mainAxisAlignment: MainAxisAlignment.center,
-          children: <Widget>[
-            const Text(
-              "Sign Up",
-              style: TextStyle(fontSize: 18, fontWeight: FontWeight.bold),
-            ),
-            Container(
-              margin: const EdgeInsets.fromLTRB(15, 30, 15, 0),
-              padding: const EdgeInsets.symmetric(vertical: 10),
-              decoration: BoxDecoration(
-                color: Colors.grey.shade200,
-                borderRadius: BorderRadius.circular(30),
-              ),
-              child: TextFormField(
-                controller: _emailController,
-                validator: (value) {
-                  if (value == null || value.isEmpty) {
-                    return "Please enter an email";
-                  } else if (!emailValid.hasMatch(value)) {
-                    return "Please enter a valid email";
-                  }
-                  return null;
-                },
-                keyboardType: TextInputType.emailAddress,
-                decoration: const InputDecoration(
-                  labelText: 'Email',
-                  hintText: 'Enter your email',
-                  border: InputBorder.none,
-                  contentPadding: EdgeInsets.symmetric(horizontal: 20),
+      body: SingleChildScrollView(
+        child: Container(
+          alignment: Alignment.center,
+          margin: const EdgeInsets.fromLTRB(5, 180, 5, 150),
+          padding: const EdgeInsets.symmetric(vertical: 10),
+          decoration: BoxDecoration(
+            color: Color(0xFF000080),
+            borderRadius: BorderRadius.circular(30),
+          ),
+
+          child: Form(
+            key: _signUpKey,
+            child: Column(
+              mainAxisAlignment: MainAxisAlignment.center,
+              children: <Widget>[
+                const Text(
+                  "Sign Up",
+                  style: TextStyle(
+                    fontSize: 18,
+                    fontWeight: FontWeight.bold,
+                    color: Color(0xFFFFD700),
+                  ),
                 ),
-              ),
-            ),
-            Container(
-              margin: const EdgeInsets.all(15),
-              padding: const EdgeInsets.symmetric(vertical: 10),
-              decoration: BoxDecoration(
-                color: Colors.grey.shade200,
-                borderRadius: BorderRadius.circular(30),
-              ),
-              child: TextFormField(
-                controller: _passwordController,
-                validator: (value) {
-                  if (value == null || value.isEmpty) {
-                    return 'Please enter your password';
-                  } else if (value.length < 6) {
-                    return 'Password must be at least 6 characters';
-                  }
-                  return null;
-                },
-                obscureText: true,
-                decoration: const InputDecoration(
-                  labelText: 'Password',
-                  hintText: 'Enter your password',
-                  border: InputBorder.none,
-                  contentPadding: EdgeInsets.symmetric(horizontal: 20),
-                ),
-              ),
-            ),
-            Container(
-              width: 250,
-              decoration: BoxDecoration(
-                color: Colors.blue,
-                borderRadius: BorderRadius.circular(30),
-              ),
-              child: ElevatedButton(
-                style: ButtonStyle(
-                  backgroundColor: MaterialStateProperty.all(Colors.blue),
-                  shape: MaterialStateProperty.all(
-                    RoundedRectangleBorder(
-                      borderRadius: BorderRadius.circular(30),
+                Container(
+                  margin: const EdgeInsets.fromLTRB(15, 30, 15, 0),
+                  padding: const EdgeInsets.symmetric(vertical: 10),
+                  decoration: BoxDecoration(
+                    color: Colors.grey.shade200,
+                    borderRadius: BorderRadius.circular(30),
+                  ),
+                  child: TextFormField(
+                    controller: _emailController,
+                    validator: (value) {
+                      if (value == null || value.isEmpty) {
+                        return "Please enter an email";
+                      } else if (!emailValid.hasMatch(value)) {
+                        return "Please enter a valid email";
+                      }
+                      return null;
+                    },
+                    keyboardType: TextInputType.emailAddress,
+                    decoration: const InputDecoration(
+                      labelText: 'Email',
+                      hintText: 'Enter your email',
+                      border: InputBorder.none,
+                      contentPadding: EdgeInsets.symmetric(horizontal: 20),
                     ),
                   ),
                 ),
-                onPressed: () {
-                  if (_signUpKey.currentState!.validate()) {
-                    debugPrint("Email: ${_emailController.text}");
-                    debugPrint("Password: ${_passwordController.text}");
-                  }
-                },
-                child: const Text(
-                  'Sign Up',
-                  style: TextStyle(color: Colors.white, fontSize: 18),
+                Container(
+                  margin: const EdgeInsets.all(15),
+                  padding: const EdgeInsets.symmetric(vertical: 10),
+                  decoration: BoxDecoration(
+                    color: Colors.grey.shade200,
+                    borderRadius: BorderRadius.circular(30),
+                  ),
+                  child: TextFormField(
+                    controller: _passwordController,
+                    validator: (value) {
+                      if (value == null || value.isEmpty) {
+                        return 'Please enter your password';
+                      } else if (value.length < 6) {
+                        return 'Password must be at least 6 characters';
+                      }
+                      return null;
+                    },
+                    obscureText: true,
+                    decoration: const InputDecoration(
+                      labelText: 'Password',
+                      hintText: 'Enter your password',
+                      border: InputBorder.none,
+                      contentPadding: EdgeInsets.symmetric(horizontal: 20),
+                    ),
+                  ),
                 ),
-              ),
+                Container(
+                  width: 250,
+                  decoration: BoxDecoration(
+                    color: Colors.blue,
+                    borderRadius: BorderRadius.circular(30),
+                  ),
+                  child: ElevatedButton(
+                    style: ButtonStyle(
+                      backgroundColor: WidgetStateProperty.all(Colors.blue),
+                      shape: WidgetStateProperty.all(
+                        RoundedRectangleBorder(
+                          borderRadius: BorderRadius.circular(30),
+                        ),
+                      ),
+                    ),
+                    onPressed: () {
+                      if (_signUpKey.currentState!.validate()) {
+                        Navigator.of(context).push(
+                          MaterialPageRoute(
+                            builder: (context) => const HomePage(),
+                          ),
+                        );
+                      }
+                    },
+                    child: const Text(
+                      'Sign Up',
+                      style: TextStyle(color: Colors.white, fontSize: 18),
+                    ),
+                  ),
+                ),
+                TextButton(
+                  onPressed: () {
+                    Navigator.of(context).push(
+                      MaterialPageRoute(builder: (context) => const SignIn()),
+                    );
+                  },
+                  child: const Text(
+                    "Don't have an account? Sign In",
+                    style: TextStyle(color: Colors.blue),
+                  ),
+                ),
+              ],
             ),
-            TextButton(
-              onPressed: () {
-                Navigator.of(
-                  context,
-                ).push(MaterialPageRoute(builder: (context) => const SignIn()));
-              },
-              child: const Text(
-                "Create a new account",
-                style: TextStyle(color: Colors.blue),
-              ),
-            ),
-          ],
+          ),
         ),
       ),
     );
