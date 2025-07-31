@@ -31,8 +31,6 @@ flutter:
   uses-material-design: true
 
   assets:
-    - assets/close-top-view-diverse-businesspeople-260nw-1667439709.webp
-    - assets/saving.jpg
-    - assets/loans.jpg
+    - assets/
   
 

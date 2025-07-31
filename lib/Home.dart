@@ -62,197 +62,241 @@ class _HomePageState extends State<HomePage> {
                 color: Colors.teal,
               ),
             ),
-            GFCard(
-              color: Color(0xFF000080),
-              padding: const EdgeInsets.all(10),
-              boxFit: BoxFit.cover,
-              image: Image.asset(''),
-              title: GFListTile(
-                avatar: GFAvatar(
-                  backgroundImage: AssetImage(
-                    'assets/close-top-view-diverse-businesspeople-260nw-1667439709.webp',
-                  ),
+            Container(
+              margin: const EdgeInsets.all(10),
+              decoration: BoxDecoration(
+                gradient: LinearGradient(
+                  begin: Alignment.topLeft,
+                  end: Alignment.bottomRight,
+                  colors: [Color(0xFF000080), Color(0xFF87CEEB)],
                 ),
-                title: Text(
-                  'Total Members',
-                  style: TextStyle(
-                    fontSize: 18,
-                    fontWeight: FontWeight.bold,
-                    color: Color(0xFFFFD700),
-                  ),
-                ),
-                subTitle: Text(
-                  'Active members',
-                  style: TextStyle(color: Color(0xFFB0C4DE)),
-                ),
+                borderRadius: BorderRadius.circular(10),
               ),
-              content: Text(
-                "This are the total and active members of the society.",
-                style: TextStyle(color: Color(0xFFE0FFFF)),
-              ),
-              buttonBar: GFButtonBar(
-                children: <Widget>[
-                  GFButton(
-                    onPressed: () {},
-                    text: 'Details',
-                    color: Colors.blue,
-                    shape: GFButtonShape.pills,
-                    borderShape: RoundedRectangleBorder(
-                      borderRadius: BorderRadius.circular(30),
+              child: GFCard(
+                color: Colors.transparent,
+                padding: const EdgeInsets.all(10),
+                boxFit: BoxFit.cover,
+                image: Image.asset(''),
+                title: GFListTile(
+                  avatar: GFAvatar(
+                    backgroundImage: AssetImage(
+                      'assets/close-top-view-diverse-businesspeople-260nw-1667439709.webp',
                     ),
                   ),
-                  GFButton(
-                    onPressed: () {},
-                    text: 'Edit',
-                    color: Colors.blue,
-                    shape: GFButtonShape.pills,
-                    borderShape: RoundedRectangleBorder(
-                      borderRadius: BorderRadius.circular(30),
+                  title: Text(
+                    'Total Members',
+                    style: TextStyle(
+                      fontSize: 18,
+                      fontWeight: FontWeight.bold,
+                      color: Color(0xFFFFD700),
                     ),
                   ),
-                ],
+                  subTitle: Text(
+                    'Active members',
+                    style: TextStyle(color: Color(0xFFB0C4DE)),
+                  ),
+                ),
+                content: Text(
+                  "This are the total and active members of the society.",
+                  style: TextStyle(color: Color(0xFFE0FFFF)),
+                ),
+                buttonBar: GFButtonBar(
+                  children: <Widget>[
+                    GFButton(
+                      onPressed: () {},
+                      text: 'Details',
+                      color: Colors.blue,
+                      shape: GFButtonShape.pills,
+                      borderShape: RoundedRectangleBorder(
+                        borderRadius: BorderRadius.circular(30),
+                      ),
+                    ),
+                    GFButton(
+                      onPressed: () {},
+                      text: 'Edit',
+                      color: Colors.blue,
+                      shape: GFButtonShape.pills,
+                      borderShape: RoundedRectangleBorder(
+                        borderRadius: BorderRadius.circular(30),
+                      ),
+                    ),
+                  ],
+                ),
               ),
             ),
-            GFCard(
-              color: Color(0xFF000080),
-              boxFit: BoxFit.cover,
-              image: Image.asset('your asset image'),
-              title: GFListTile(
-                avatar: GFAvatar(
-                  backgroundImage: AssetImage('assets/saving.jpg'),
+            Container(
+              margin: const EdgeInsets.all(10),
+              decoration: BoxDecoration(
+                gradient: LinearGradient(
+                  begin: Alignment.topLeft,
+                  end: Alignment.bottomRight,
+                  colors: [Color(0xFF000080), Color(0xFF87CEEB)],
                 ),
-                title: Text(
-                  'Total savings',
-                  style: TextStyle(
-                    fontSize: 18,
-                    fontWeight: FontWeight.bold,
-                    color: Color(0xFFFFD700),
+                borderRadius: BorderRadius.circular(10),
+              ),
+              child: GFCard(
+                color: Colors.transparent,
+                boxFit: BoxFit.cover,
+                image: Image.asset('your asset image'),
+                title: GFListTile(
+                  avatar: GFAvatar(
+                    backgroundImage: AssetImage('assets/saving.jpg '),
                   ),
-                ),
-                subTitle: Text(
-                  'Saving Balance',
-                  style: TextStyle(color: Color(0xFFB0C4DE)),
-                ),
-              ),
-              content: Text(
-                "This are the total and saved balance of the society.",
-                style: TextStyle(color: Color(0xFFE0FFFF)),
-              ),
-              buttonBar: GFButtonBar(
-                children: <Widget>[
-                  GFButton(
-                    onPressed: () {},
-                    text: 'Details',
-                    color: Colors.blue,
-                    shape: GFButtonShape.pills,
-                    borderShape: RoundedRectangleBorder(
-                      borderRadius: BorderRadius.circular(30),
+                  title: Text(
+                    'Total savings',
+                    style: TextStyle(
+                      fontSize: 18,
+                      fontWeight: FontWeight.bold,
+                      color: Color(0xFFFFD700),
                     ),
                   ),
-                  GFButton(
-                    onPressed: () {},
-                    text: 'Edit',
-                    color: Colors.blue,
-                    shape: GFButtonShape.pills,
-                    borderShape: RoundedRectangleBorder(
-                      borderRadius: BorderRadius.circular(30),
-                    ),
+                  subTitle: Text(
+                    'Saving Balance',
+                    style: TextStyle(color: Color(0xFFB0C4DE)),
                   ),
-                ],
+                ),
+                content: Text(
+                  "This are the total and saved balance of the society.",
+                  style: TextStyle(color: Color(0xFFE0FFFF)),
+                ),
+                buttonBar: GFButtonBar(
+                  children: <Widget>[
+                    GFButton(
+                      onPressed: () {},
+                      text: 'Details',
+                      color: Colors.blue,
+                      shape: GFButtonShape.pills,
+                      borderShape: RoundedRectangleBorder(
+                        borderRadius: BorderRadius.circular(30),
+                      ),
+                    ),
+                    GFButton(
+                      onPressed: () {},
+                      text: 'Edit',
+                      color: Colors.blue,
+                      shape: GFButtonShape.pills,
+                      borderShape: RoundedRectangleBorder(
+                        borderRadius: BorderRadius.circular(30),
+                      ),
+                    ),
+                  ],
+                ),
               ),
             ),
-            GFCard(
-              color: Color(0xFF000080),
-              boxFit: BoxFit.cover,
-              image: Image.asset('your asset image'),
-              title: GFListTile(
-                avatar: GFAvatar(
-                  backgroundImage: AssetImage('assets/loans.jpg'),
+            Container(
+              margin: const EdgeInsets.all(10),
+              decoration: BoxDecoration(
+                gradient: LinearGradient(
+                  begin: Alignment.topLeft,
+                  end: Alignment.bottomRight,
+                  colors: [Color(0xFF000080), Color(0xFF87CEEB)],
                 ),
-                title: Text(
-                  'Active Loans',
-                  style: TextStyle(
-                    fontSize: 18,
-                    fontWeight: FontWeight.bold,
-                    color: Color(0xFFFFD700),
+                borderRadius: BorderRadius.circular(10),
+              ),
+              child: GFCard(
+                color: Colors.transparent,
+                boxFit: BoxFit.cover,
+                image: Image.asset('your asset image'),
+                title: GFListTile(
+                  avatar: GFAvatar(
+                    backgroundImage: AssetImage('assets/loans.jpg'),
                   ),
-                ),
-                subTitle: Text(
-                  'Currently disbursed',
-                  style: TextStyle(color: Color(0xFFB0C4DE)),
-                ),
-              ),
-              content: Text(
-                "This are the current loans of the society.",
-                style: TextStyle(color: Color(0xFFE0FFFF)),
-              ),
-              buttonBar: GFButtonBar(
-                children: <Widget>[
-                  GFButton(
-                    onPressed: () {},
-                    text: 'Details',
-                    color: Colors.blue,
-                    shape: GFButtonShape.pills,
-                    borderShape: RoundedRectangleBorder(
-                      borderRadius: BorderRadius.circular(30),
+                  title: Text(
+                    'Active Loans',
+                    style: TextStyle(
+                      fontSize: 18,
+                      fontWeight: FontWeight.bold,
+                      color: Color(0xFFFFD700),
                     ),
                   ),
-                  GFButton(
-                    onPressed: () {},
-                    text: 'Edit',
-                    color: Colors.blue,
-                    shape: GFButtonShape.pills,
-                    borderShape: RoundedRectangleBorder(
-                      borderRadius: BorderRadius.circular(30),
-                    ),
+                  subTitle: Text(
+                    'Currently disbursed',
+                    style: TextStyle(color: Color(0xFFB0C4DE)),
                   ),
-                ],
+                ),
+                content: Text(
+                  "This are the current loans of the society.",
+                  style: TextStyle(color: Color(0xFFE0FFFF)),
+                ),
+                buttonBar: GFButtonBar(
+                  children: <Widget>[
+                    GFButton(
+                      onPressed: () {},
+                      text: 'Details',
+                      color: Colors.blue,
+                      shape: GFButtonShape.pills,
+                      borderShape: RoundedRectangleBorder(
+                        borderRadius: BorderRadius.circular(30),
+                      ),
+                    ),
+                    GFButton(
+                      onPressed: () {},
+                      text: 'Edit',
+                      color: Colors.blue,
+                      shape: GFButtonShape.pills,
+                      borderShape: RoundedRectangleBorder(
+                        borderRadius: BorderRadius.circular(30),
+                      ),
+                    ),
+                  ],
+                ),
               ),
             ),
-            GFCard(
-              color: Color(0xFF000080),
-              boxFit: BoxFit.cover,
-              image: Image.asset('your asset image'),
-              title: GFListTile(
-                avatar: GFAvatar(backgroundImage: AssetImage('')),
-                title: Text(
-                  'Loan Amount',
-                  style: TextStyle(
-                    fontSize: 18,
-                    fontWeight: FontWeight.bold,
-                    color: Color(0xFFFFD700),
-                  ),
+            Container(
+              margin: const EdgeInsets.all(10),
+              decoration: BoxDecoration(
+                gradient: LinearGradient(
+                  begin: Alignment.topLeft,
+                  end: Alignment.bottomRight,
+                  colors: [Color(0xFF000080), Color(0xFF87CEEB)],
                 ),
-                subTitle: Text(
-                  'Total disbursed',
-                  style: TextStyle(color: Color(0xFFB0C4DE)),
-                ),
+                borderRadius: BorderRadius.circular(10),
               ),
-              content: Text(
-                "This is the total amount of loan disbursed.",
-                style: TextStyle(color: Color(0xFFE0FFFF)),
-              ),
-              buttonBar: GFButtonBar(
-                children: <Widget>[
-                  GFButton(
-                    onPressed: () {},
-                    text: 'Details',
-                    color: Colors.blue,
-                    shape: GFButtonShape.pills,
-                    borderShape: RoundedRectangleBorder(
-                      borderRadius: BorderRadius.circular(30),
+              child: GFCard(
+                color: Colors.transparent,
+                boxFit: BoxFit.cover,
+                image: Image.asset('your asset image'),
+                title: GFListTile(
+                  avatar: GFAvatar(backgroundImage: AssetImage('')),
+                  title: Text(
+                    'Loan Amount',
+                    style: TextStyle(
+                      fontSize: 18,
+                      fontWeight: FontWeight.bold,
+                      color: Color(0xFFFFD700),
                     ),
                   ),
-                  GFButton(
-                    onPressed: () {},
-                    text: 'Edit',
-                    color: Colors.blue,
-                    shape: GFButtonShape.pills,
-                    borderShape: RoundedRectangleBorder(
-                      borderRadius: BorderRadius.circular(30),
-                    ),
+                  subTitle: Text(
+                    'Total disbursed',
+                    style: TextStyle(color: Color(0xFFB0C4DE)),
                   ),
-                ],
+                ),
+                content: Text(
+                  "This is the total amount of loan disbursed.",
+                  style: TextStyle(color: Color(0xFFE0FFFF)),
+                ),
+                buttonBar: GFButtonBar(
+                  children: <Widget>[
+                    GFButton(
+                      onPressed: () {},
+                      text: 'Details',
+                      color: Colors.blue,
+                      shape: GFButtonShape.pills,
+                      borderShape: RoundedRectangleBorder(
+                        borderRadius: BorderRadius.circular(30),
+                      ),
+                    ),
+                    GFButton(
+                      onPressed: () {},
+                      text: 'Edit',
+                      color: Colors.blue,
+                      shape: GFButtonShape.pills,
+                      borderShape: RoundedRectangleBorder(
+                        borderRadius: BorderRadius.circular(30),
+                      ),
+                    ),
+                  ],
+                ),
               ),
             ),
             // Recent Transactions Section
@@ -265,61 +309,88 @@ class _HomePageState extends State<HomePage> {
                 color: Colors.teal,
               ),
             ),
-            GFListTile(
-              color: Color(0xFF000080),
-              title: Text('Deposit', style: TextStyle(color: Colors.green)),
-              subTitle: Text(
-                'Click to view deposit details',
-                style: TextStyle(color: Color(0xFFE0FFFF)),
+            Container(
+              decoration: const BoxDecoration(
+                gradient: LinearGradient(
+                  begin: Alignment.topLeft,
+                  end: Alignment.bottomRight,
+                  colors: [Color(0xFF000080), Color(0xFF87CEEB)],
+                ),
+                borderRadius: BorderRadius.all(Radius.circular(10)),
               ),
-              icon: Icon(Icons.arrow_downward, color: Colors.green),
-            ),
-            const Divider(),
-            GFListTile(
-              color: Color(0xFF000080),
-              title: Text(
-                'Loan Payment',
-                style: TextStyle(color: Colors.orange),
+              padding: const EdgeInsets.all(10),
+              margin: const EdgeInsets.all(10),
+
+              child: Column(
+                children: [
+                  GFListTile(
+                    title: Text(
+                      'Deposit',
+                      style: TextStyle(color: Colors.green),
+                    ),
+                    subTitle: Text(
+                      'Click to view deposit details',
+                      style: TextStyle(color: Color(0xFFE0FFFF)),
+                    ),
+                    icon: Icon(Icons.arrow_downward, color: Colors.green),
+                  ),
+                  const Divider(color: Colors.white30),
+                  GFListTile(
+                    title: Text(
+                      'Loan Payment',
+                      style: TextStyle(color: Colors.orange),
+                    ),
+                    subTitle: Text(
+                      'Click to view loan details',
+                      style: TextStyle(color: Color(0xFFE0FFFF)),
+                    ),
+                    icon: Icon(Icons.payment, color: Colors.orange),
+                  ),
+                  const Divider(color: Colors.white30),
+                  GFListTile(
+                    title: Text(
+                      'Withdrawal',
+                      style: TextStyle(color: Colors.red),
+                    ),
+                    subTitle: Text(
+                      'Click to view withdrawal details',
+                      style: TextStyle(color: Color(0xFFE0FFFF)),
+                    ),
+                    icon: Icon(Icons.arrow_upward, color: Colors.red),
+                  ),
+                  const Divider(color: Colors.white30),
+                  GFListTile(
+                    title: Text(
+                      'Interest Earned',
+                      style: TextStyle(color: Colors.blue),
+                    ),
+                    subTitle: Text(
+                      'Click to view interest details',
+                      style: TextStyle(color: Color(0xFFE0FFFF)),
+                    ),
+                    icon: Icon(Icons.trending_up, color: Colors.blue),
+                  ),
+                ],
               ),
-              subTitle: Text(
-                'Click to view loan details',
-                style: TextStyle(color: Color(0xFFE0FFFF)),
-              ),
-              icon: Icon(Icons.payment, color: Colors.orange),
-            ),
-            const Divider(),
-            GFListTile(
-              color: Color(0xFF000080),
-              title: Text('Withdrawal', style: TextStyle(color: Colors.red)),
-              subTitle: Text(
-                'Click to view withdrawal details',
-                style: TextStyle(color: Color(0xFFE0FFFF)),
-              ),
-              icon: Icon(Icons.arrow_upward, color: Colors.red),
-            ),
-            const Divider(),
-            GFListTile(
-              color: Color(0xFF000080),
-              title: Text(
-                'Interest Earned',
-                style: TextStyle(color: Colors.blue),
-              ),
-              subTitle: Text(
-                'Click to view interest details',
-                style: TextStyle(color: Color(0xFFE0FFFF)),
-              ),
-              icon: Icon(Icons.trending_up, color: Colors.blue),
             ),
           ],
         ),
       ),
       drawer: Drawer(
-        backgroundColor: Color(0xFF000080),
         child: Container(
           padding: const EdgeInsets.fromLTRB(20, 40, 20, 0),
+          decoration: BoxDecoration(
+            gradient: LinearGradient(
+              begin: Alignment.topLeft,
+              end: Alignment.bottomRight,
+              colors: [Color(0xFF000080), Color(0xFF87CEEB)],
+            ),
+            borderRadius: BorderRadius.circular(10),
+          ),
           child: Column(
             children: [
               GFListTile(
+                margin: const EdgeInsets.fromLTRB(20, 40, 20, 80),
                 avatar: GFAvatar(
                   backgroundImage: AssetImage('assets/user_avatar.png'),
                   shape: GFAvatarShape.circle,
