@@ -17,6 +17,7 @@ dependencies:
   riverpod: ^2.6.1
   flutter_riverpod: ^2.6.1
   getwidget: ^6.0.0
+  table: ^0.0.1-dev
 
 dev_dependencies:
   flutter_test:

@@ -1,5 +1,8 @@
+import 'package:demo_cooperative_society/Pages/Member.dart';
 import 'package:demo_cooperative_society/Pages/quick_actions.dart';
+import 'package:demo_cooperative_society/Pages/settings.dart';
 import 'package:demo_cooperative_society/Pages/sign_up.dart';
+import 'package:demo_cooperative_society/Pages/statements.dart';
 import 'package:flutter/material.dart';
 import 'package:getwidget/getwidget.dart';
 
@@ -62,65 +65,72 @@ class _HomePageState extends State<HomePage> {
                 color: Colors.teal,
               ),
             ),
-            Container(
-              margin: const EdgeInsets.all(10),
-              decoration: BoxDecoration(
-                gradient: LinearGradient(
-                  begin: Alignment.topLeft,
-                  end: Alignment.bottomRight,
-                  colors: [Color(0xFF000080), Color(0xFF87CEEB)],
-                ),
-                borderRadius: BorderRadius.circular(10),
-              ),
-              child: GFCard(
-                color: Colors.transparent,
-                padding: const EdgeInsets.all(10),
-                boxFit: BoxFit.cover,
-                image: Image.asset(''),
-                title: GFListTile(
-                  avatar: GFAvatar(
-                    backgroundImage: AssetImage(
-                      'assets/close-top-view-diverse-businesspeople-260nw-1667439709.webp',
-                    ),
+            GestureDetector(
+              onTap: () {
+                Navigator.of(context).push(
+                  MaterialPageRoute(builder: (context) => const Members()),
+                );
+              },
+              child: Container(
+                margin: const EdgeInsets.all(10),
+                decoration: BoxDecoration(
+                  gradient: LinearGradient(
+                    begin: Alignment.topLeft,
+                    end: Alignment.bottomRight,
+                    colors: [Color(0xFF000080), Color(0xFF87CEEB)],
                   ),
-                  title: Text(
-                    'Total Members',
-                    style: TextStyle(
-                      fontSize: 18,
-                      fontWeight: FontWeight.bold,
-                      color: Color(0xFFFFD700),
-                    ),
-                  ),
-                  subTitle: Text(
-                    'Active members',
-                    style: TextStyle(color: Color(0xFFB0C4DE)),
-                  ),
+                  borderRadius: BorderRadius.circular(10),
                 ),
-                content: Text(
-                  "This are the total and active members of the society.",
-                  style: TextStyle(color: Color(0xFFE0FFFF)),
-                ),
-                buttonBar: GFButtonBar(
-                  children: <Widget>[
-                    GFButton(
-                      onPressed: () {},
-                      text: 'Details',
-                      color: Colors.blue,
-                      shape: GFButtonShape.pills,
-                      borderShape: RoundedRectangleBorder(
-                        borderRadius: BorderRadius.circular(30),
+                child: GFCard(
+                  color: Colors.transparent,
+                  padding: const EdgeInsets.all(10),
+                  boxFit: BoxFit.cover,
+                  image: Image.asset(''),
+                  title: GFListTile(
+                    avatar: GFAvatar(
+                      backgroundImage: AssetImage(
+                        'assets/close-top-view-diverse-businesspeople-260nw-1667439709.webp',
                       ),
                     ),
-                    GFButton(
-                      onPressed: () {},
-                      text: 'Edit',
-                      color: Colors.blue,
-                      shape: GFButtonShape.pills,
-                      borderShape: RoundedRectangleBorder(
-                        borderRadius: BorderRadius.circular(30),
+                    title: Text(
+                      'Total Members',
+                      style: TextStyle(
+                        fontSize: 18,
+                        fontWeight: FontWeight.bold,
+                        color: Color(0xFFFFD700),
                       ),
                     ),
-                  ],
+                    subTitle: Text(
+                      'Active members',
+                      style: TextStyle(color: Color(0xFFB0C4DE)),
+                    ),
+                  ),
+                  content: Text(
+                    "This are the total and active members of the society.",
+                    style: TextStyle(color: Color(0xFFE0FFFF)),
+                  ),
+                  buttonBar: GFButtonBar(
+                    children: <Widget>[
+                      GFButton(
+                        onPressed: () {},
+                        text: 'Details',
+                        color: Colors.blue,
+                        shape: GFButtonShape.pills,
+                        borderShape: RoundedRectangleBorder(
+                          borderRadius: BorderRadius.circular(30),
+                        ),
+                      ),
+                      GFButton(
+                        onPressed: () {},
+                        text: 'Edit',
+                        color: Colors.blue,
+                        shape: GFButtonShape.pills,
+                        borderShape: RoundedRectangleBorder(
+                          borderRadius: BorderRadius.circular(30),
+                        ),
+                      ),
+                    ],
+                  ),
                 ),
               ),
             ),
@@ -196,10 +206,10 @@ class _HomePageState extends State<HomePage> {
               child: GFCard(
                 color: Colors.transparent,
                 boxFit: BoxFit.cover,
-                image: Image.asset('your asset image'),
+                image: Image.asset('assets/loans.jpg'),
                 title: GFListTile(
                   avatar: GFAvatar(
-                    backgroundImage: AssetImage('assets/loans.jpg'),
+                    backgroundImage: const AssetImage('assets/loans.jpg'),
                   ),
                   title: Text(
                     'Active Loans',
@@ -392,7 +402,7 @@ class _HomePageState extends State<HomePage> {
               GFListTile(
                 margin: const EdgeInsets.fromLTRB(20, 40, 20, 80),
                 avatar: GFAvatar(
-                  backgroundImage: AssetImage('assets/user_avatar.png'),
+                  backgroundImage: const AssetImage('assets/user_avatar.png'),
                   shape: GFAvatarShape.circle,
                 ),
                 title: Text(
@@ -442,7 +452,9 @@ class _HomePageState extends State<HomePage> {
                 icon: Icon(Icons.history, color: Color(0xFFFFD700)),
                 onTap: () {
                   // Navigate to Transactions
-                  Navigator.pushNamed(context, '/transactions');
+                  Navigator.of(
+                    context,
+                  ).push(MaterialPageRoute(builder: (context) => Statements()));
                 },
               ),
               const Divider(),
@@ -453,8 +465,9 @@ class _HomePageState extends State<HomePage> {
                 ),
                 icon: Icon(Icons.settings, color: Color(0xFFFFD700)),
                 onTap: () {
-                  // Navigate to Settings
-                  Navigator.pushNamed(context, '/settings');
+                  Navigator.of(context).push(
+                    MaterialPageRoute(builder: (context) => const Settings()),
+                  );
                 },
               ),
               GFListTile(

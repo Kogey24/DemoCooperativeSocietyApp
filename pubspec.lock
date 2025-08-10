@@ -208,6 +208,14 @@ packages:
       url: "https://pub.dev"
     source: hosted
     version: "1.4.1"
+  table:
+    dependency: "direct main"
+    description:
+      name: table
+      sha256: "40cdb2c51b74f649f19b6476da79c488d81ee7aac773e94a4dae1896f5de49f6"
+      url: "https://pub.dev"
+    source: hosted
+    version: "0.0.1-dev"
   term_glyph:
     dependency: transitive
     description:
