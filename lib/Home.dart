@@ -1,5 +1,6 @@
 import 'package:demo_cooperative_society/Pages/Member.dart';
 import 'package:demo_cooperative_society/Pages/quick_actions.dart';
+import 'package:demo_cooperative_society/Pages/savings.dart';
 import 'package:demo_cooperative_society/Pages/settings.dart';
 import 'package:demo_cooperative_society/Pages/sign_up.dart';
 import 'package:demo_cooperative_society/Pages/statements.dart';
@@ -144,52 +145,57 @@ class _HomePageState extends State<HomePage> {
                 ),
                 borderRadius: BorderRadius.circular(10),
               ),
-              child: GFCard(
-                color: Colors.transparent,
-                boxFit: BoxFit.cover,
-                image: Image.asset('your asset image'),
-                title: GFListTile(
-                  avatar: GFAvatar(
-                    backgroundImage: AssetImage('assets/saving.jpg '),
-                  ),
-                  title: Text(
-                    'Total savings',
-                    style: TextStyle(
-                      fontSize: 18,
-                      fontWeight: FontWeight.bold,
-                      color: Color(0xFFFFD700),
+              child: GestureDetector(
+                onTap: () => Navigator.of(context).push(
+                  MaterialPageRoute(builder: (context) => const SavingsPage()),
+                ),
+                child: GFCard(
+                  color: Colors.transparent,
+                  boxFit: BoxFit.cover,
+                  image: Image.asset('your asset image'),
+                  title: GFListTile(
+                    avatar: GFAvatar(
+                      backgroundImage: AssetImage('assets/saving.jpg '),
                     ),
-                  ),
-                  subTitle: Text(
-                    'Saving Balance',
-                    style: TextStyle(color: Color(0xFFB0C4DE)),
-                  ),
-                ),
-                content: Text(
-                  "This are the total and saved balance of the society.",
-                  style: TextStyle(color: Color(0xFFE0FFFF)),
-                ),
-                buttonBar: GFButtonBar(
-                  children: <Widget>[
-                    GFButton(
-                      onPressed: () {},
-                      text: 'Details',
-                      color: Colors.blue,
-                      shape: GFButtonShape.pills,
-                      borderShape: RoundedRectangleBorder(
-                        borderRadius: BorderRadius.circular(30),
+                    title: Text(
+                      'Total savings',
+                      style: TextStyle(
+                        fontSize: 18,
+                        fontWeight: FontWeight.bold,
+                        color: Color(0xFFFFD700),
                       ),
                     ),
-                    GFButton(
-                      onPressed: () {},
-                      text: 'Edit',
-                      color: Colors.blue,
-                      shape: GFButtonShape.pills,
-                      borderShape: RoundedRectangleBorder(
-                        borderRadius: BorderRadius.circular(30),
-                      ),
+                    subTitle: Text(
+                      'Saving Balance',
+                      style: TextStyle(color: Color(0xFFB0C4DE)),
                     ),
-                  ],
+                  ),
+                  content: Text(
+                    "This are the total and saved balance of the society.",
+                    style: TextStyle(color: Color(0xFFE0FFFF)),
+                  ),
+                  buttonBar: GFButtonBar(
+                    children: <Widget>[
+                      GFButton(
+                        onPressed: () {},
+                        text: 'Details',
+                        color: Colors.blue,
+                        shape: GFButtonShape.pills,
+                        borderShape: RoundedRectangleBorder(
+                          borderRadius: BorderRadius.circular(30),
+                        ),
+                      ),
+                      GFButton(
+                        onPressed: () {},
+                        text: 'Edit',
+                        color: Colors.blue,
+                        shape: GFButtonShape.pills,
+                        borderShape: RoundedRectangleBorder(
+                          borderRadius: BorderRadius.circular(30),
+                        ),
+                      ),
+                    ],
+                  ),
                 ),
               ),
             ),
